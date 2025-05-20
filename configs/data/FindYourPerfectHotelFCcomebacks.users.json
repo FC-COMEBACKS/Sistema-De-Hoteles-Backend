@@ -1,0 +1,78 @@
+[{
+  "_id": {
+    "$oid": "682b45ab616986de26f0d417"
+  },
+  "name": "Marco",
+  "email": "marco@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$10Ksk5PFfRaHa0azaTrpWg$8mb/wgP6Ce5oBFxbRCge8K2s+V8Nm2WVsHh2km8PYE8",
+  "role": "ADMIN_ROLE",
+  "reservation": [],
+  "events": [],
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b47953fb43adb9d5aa019"
+  },
+  "name": "Daniel",
+  "email": "daniel@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$hNVHib/PrkrZIegS8Ry+jg$wHcsFGaSaVPrEDYDAr++q9QAAiPdrMtiQrrMOiQxlJ0",
+  "role": "CLIENT_ROLE",
+  "reservation": [],
+  "events": "FIFTEEN_YEARS",
+  "status": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b49f185717a27cfa51b1e"
+  },
+  "name": "Daniel",
+  "email": "daniel1@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$th9iaWHqw444a42MKYa/BQ$fB+NcY3pW3XKk4RMFC00CKCqJnG1eqr+J2ydV+dg8TU",
+  "role": "CLIENT_ROLE",
+  "reservation": [],
+  "events": "FIFTEEN_YEARS",
+  "status": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b4a4e85717a27cfa51b21"
+  },
+  "name": "Juan",
+  "email": "juann@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$Ha1xaayr6Sjcjoe4NwneFA$tIU7AkSE2ueWpsIhW/UzEQFScptmpMBl0qfB+IGi1S4",
+  "role": "HOST_ROLE",
+  "reservation": [],
+  "events": "MEETINGS",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b541c1b0ecb1ad9c2ac3c"
+  },
+  "name": "Daniel",
+  "email": "dani@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$O+gUmcEjH85uh0QQlGmiMA$whkFHcQin9ZfrEvoletoS3kYYcqXCn39x5YjC2UVCug",
+  "role": "CLIENT_ROLE",
+  "reservation": [],
+  "events": "FIFTEEN_YEARS",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b60b54b9f597cff3055f7"
+  },
+  "name": "Andres",
+  "email": "andres@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$DCUm1Up5kgdRyfGGREKZnQ$VKtXB4qI5rhn4rIWJA9W4YlMPlhEDlFiK4nx/xG0Id0",
+  "role": "CLIENT_ROLE",
+  "reservation": [],
+  "events": "FIFTEEN_YEARS",
+  "status": true,
+  "__v": 0
+}]

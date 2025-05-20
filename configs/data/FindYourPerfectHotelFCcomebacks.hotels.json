@@ -1,0 +1,180 @@
+[{
+  "_id": {
+    "$oid": "682b5b954b9f597cff3055b0"
+  },
+  "name": "Hotel Sunshine",
+  "description": "A cozy hotel near the beach.",
+  "address": "123 Beach Avenue",
+  "telephone": "12345678",
+  "services": [
+    {
+      "type": "Singleroom",
+      "price": 85.5,
+      "_id": {
+        "$oid": "682b5b954b9f597cff3055b1"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "682b4a4e85717a27cfa51b21"
+  },
+  "averageRating": 0,
+  "status": true,
+  "ratings": [],
+  "createdAt": {
+    "$date": "2025-05-19T16:25:57.369Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T16:25:57.369Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682b5c444b9f597cff3055bc"
+  },
+  "name": "Hotel Peach",
+  "description": "A cozy hotel near the park.",
+  "address": "12 Beach Avenue",
+  "telephone": "12340912",
+  "services": [
+    {
+      "type": "Singleroom",
+      "price": 100.5,
+      "_id": {
+        "$oid": "682b5dd04b9f597cff3055df"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "682b4a4e85717a27cfa51b21"
+  },
+  "averageRating": 0,
+  "status": true,
+  "ratings": [],
+  "createdAt": {
+    "$date": "2025-05-19T16:28:52.227Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T16:35:28.281Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682b5c524b9f597cff3055c3"
+  },
+  "name": "Hotel Shine",
+  "description": "A cozy hotel near the park.",
+  "address": "12 Beach Avenue",
+  "telephone": "12340912",
+  "services": [
+    {
+      "type": "Singleroom",
+      "price": 100.5,
+      "_id": {
+        "$oid": "682b5c524b9f597cff3055c4"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "682b4a4e85717a27cfa51b21"
+  },
+  "averageRating": 0,
+  "status": true,
+  "ratings": [],
+  "createdAt": {
+    "$date": "2025-05-19T16:29:06.566Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T16:29:06.566Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682b5c5d4b9f597cff3055ca"
+  },
+  "name": "Hotel Mushroom",
+  "description": "A cozy hotel near the park.",
+  "address": "12 Beach Avenue",
+  "telephone": "12340912",
+  "services": [
+    {
+      "type": "Singleroom",
+      "price": 100.5,
+      "_id": {
+        "$oid": "682b5c5d4b9f597cff3055cb"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "682b4a4e85717a27cfa51b21"
+  },
+  "averageRating": 0,
+  "status": true,
+  "ratings": [],
+  "createdAt": {
+    "$date": "2025-05-19T16:29:17.433Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T16:29:17.433Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682b5c664b9f597cff3055d1"
+  },
+  "name": "Hotel Chewbacca",
+  "description": "A cozy hotel near the park.",
+  "address": "12 Beach Avenue",
+  "telephone": "12340912",
+  "services": [
+    {
+      "type": "Singleroom",
+      "price": 100.5,
+      "_id": {
+        "$oid": "682b5c664b9f597cff3055d2"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "682b4a4e85717a27cfa51b21"
+  },
+  "averageRating": 0,
+  "status": true,
+  "ratings": [],
+  "createdAt": {
+    "$date": "2025-05-19T16:29:26.648Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T16:29:26.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682b5df04b9f597cff3055e6"
+  },
+  "name": "Hotel Mario",
+  "description": "A cozy hotel near the park.",
+  "address": "12 Beach Avenue",
+  "telephone": "12340912",
+  "services": [
+    {
+      "type": "Singleroom",
+      "price": 100.5,
+      "_id": {
+        "$oid": "682b5df04b9f597cff3055e7"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "682b4a4e85717a27cfa51b21"
+  },
+  "averageRating": 0,
+  "status": false,
+  "ratings": [],
+  "createdAt": {
+    "$date": "2025-05-19T16:36:00.949Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-19T16:37:01.495Z"
+  }
+}]

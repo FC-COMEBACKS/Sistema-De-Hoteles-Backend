@@ -1,0 +1,1174 @@
+{
+	"info": {
+		"_postman_id": "e7b2e089-61ff-4ce2-9b47-1fe2bf1d889f",
+		"name": "FYPH",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42000110"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Andres\",\r\n    \"email\":\"andres@gmail.com\",\r\n    \"password\":\"An12345@\",\r\n    \"events\":\"FIFTEEN_YEARS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login (ADMIN)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"marco@gmail.com\",\r\n    \"password\":\"mA12345@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuario por ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc2NjY5NTMsImV4cCI6MTc0NzY3MDU1M30.rHBMW6c5ep2rsUrm1fFn8bXxpg0MVfNTPNP6WOsfcyc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"marco@gmail.com\",\r\n    \"password\":\"Ma12345@\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/users/findUser/682b47953fb43adb9d5aa019",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"users",
+								"findUser",
+								"682b47953fb43adb9d5aa019"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista de usuarios",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc2NjY5NTMsImV4cCI6MTc0NzY3MDU1M30.rHBMW6c5ep2rsUrm1fFn8bXxpg0MVfNTPNP6WOsfcyc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar usuario(ADMIN)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc2NjY5NTMsImV4cCI6MTc0NzY3MDU1M30.rHBMW6c5ep2rsUrm1fFn8bXxpg0MVfNTPNP6WOsfcyc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/users/deleteUserAdmin/682b47953fb43adb9d5aa019",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"users",
+								"deleteUserAdmin",
+								"682b47953fb43adb9d5aa019"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register anfitriones",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Juan\",\r\n    \"email\":\"juan@gmail.com\",\r\n    \"password\":\"Ju12345@\",\r\n    \"events\":\"MEETINGS\",\r\n    \"role\":\"HOST_ROLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar usuario(CLIENTE)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDlmMTg1NzE3YTI3Y2ZhNTFiMWUiLCJpYXQiOjE3NDc2Njc3MjQsImV4cCI6MTc0NzY3MTMyNH0.H0Z_ZbrBTs_85f4dlEnU7gE-PaRKU76koVAsGLlfZjE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/users/deleteUserClient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"users",
+								"deleteUserClient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"andres@gmail.com\",\r\n    \"password\":\"An12345@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar contraseña",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc2NjY5NTMsImV4cCI6MTc0NzY3MDU1M30.rHBMW6c5ep2rsUrm1fFn8bXxpg0MVfNTPNP6WOsfcyc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newPassword\":\"mA12345@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/users/updatePassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"users",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar usuario(CLIENTE)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNTQxYzFiMGVjYjFhZDljMmFjM2MiLCJpYXQiOjE3NDc2NzAwNzYsImV4cCI6MTc0NzY3MzY3Nn0.QVHI-t5COC-k28fL_B4OARIY__QJ1NDa6fNAlVxaRZo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"daniell1@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/users/updateUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"users",
+								"updateUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar usuario(ANFITRION))",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNGE0ZTg1NzE3YTI3Y2ZhNTFiMjEiLCJpYXQiOjE3NDc2NzAzNjIsImV4cCI6MTc0NzY3Mzk2Mn0.GEoqPaKv05QfiVyc4nCj8OiNS1NE1-RP3cvXa241SZY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"juann@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/users/updateUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"users",
+								"updateUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login(ANFITRION)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"juan@gmail.com\",\r\n    \"password\":\"Ju12345@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar usuario(ADMIN)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc2NzA1MzQsImV4cCI6MTc0NzY3NDEzNH0.9Kprzli9jW6dDp6gdVVsJxgwxYeQIqW5z8ip_VNnlGY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"dani@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/users/updateUserAdmin/682b541c1b0ecb1ad9c2ac3c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"users",
+								"updateUserAdmin",
+								"682b541c1b0ecb1ad9c2ac3c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar rol",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc2NzA1MzQsImV4cCI6MTc0NzY3NDEzNH0.9Kprzli9jW6dDp6gdVVsJxgwxYeQIqW5z8ip_VNnlGY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newRole\":\"CLIENT_ROLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/users/updateRole/682b541c1b0ecb1ad9c2ac3c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"users",
+								"updateRole",
+								"682b541c1b0ecb1ad9c2ac3c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Daniel\",\r\n    \"email\":\"daniel1@gmail.com\",\r\n    \"password\":\"Da12345@\",\r\n    \"events\":\"FIFTEEN_YEARS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hotel",
+			"item": [
+				{
+					"name": "Agregar hotel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc2NzA1MzQsImV4cCI6MTc0NzY3NDEzNH0.9Kprzli9jW6dDp6gdVVsJxgwxYeQIqW5z8ip_VNnlGY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Hotel Mario\",\r\n  \"description\": \"A cozy hotel near the park.\",\r\n  \"address\": \"12 Beach Avenue\",\r\n  \"telephone\": \"12340912\",\r\n  \"services\": [\r\n    {\r\n      \"type\": \"Singleroom\",\r\n      \"price\": 100.50\r\n    }\r\n  ],\r\n  \"host\": \"682b4a4e85717a27cfa51b21\"  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/hotels/createHotel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"hotels",
+								"createHotel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista de hoteles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc2NzA1MzQsImV4cCI6MTc0NzY3NDEzNH0.9Kprzli9jW6dDp6gdVVsJxgwxYeQIqW5z8ip_VNnlGY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Hotel Sunshine\",\r\n  \"description\": \"A cozy hotel near the beach.\",\r\n  \"address\": \"123 Beach Avenue\",\r\n  \"telephone\": \"12345678\",\r\n  \"services\": [\r\n    {\r\n      \"type\": \"Singleroom\",\r\n      \"price\": 85.50\r\n    }\r\n  ],\r\n  \"host\": \"682b4a4e85717a27cfa51b21\"  \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/hotels/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"hotels",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista hotel individual",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc2NzA1MzQsImV4cCI6MTc0NzY3NDEzNH0.9Kprzli9jW6dDp6gdVVsJxgwxYeQIqW5z8ip_VNnlGY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Hotel Chewbacca\",\r\n  \"description\": \"A cozy hotel near the park.\",\r\n  \"address\": \"12 Beach Avenue\",\r\n  \"telephone\": \"12340912\",\r\n  \"services\": [\r\n    {\r\n      \"type\": \"Singleroom\",\r\n      \"price\": 100.50\r\n    }\r\n  ],\r\n  \"host\": \"682b4a4e85717a27cfa51b21\"  \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/hotels/findHotel/682b5c664b9f597cff3055d1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"hotels",
+								"findHotel",
+								"682b5c664b9f597cff3055d1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar hotel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc2NzA1MzQsImV4cCI6MTc0NzY3NDEzNH0.9Kprzli9jW6dDp6gdVVsJxgwxYeQIqW5z8ip_VNnlGY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Hotel Peach\",\r\n  \"description\": \"A cozy hotel near the park.\",\r\n  \"address\": \"12 Beach Avenue\",\r\n  \"telephone\": \"12340912\",\r\n  \"services\": [\r\n    {\r\n      \"type\": \"Singleroom\",\r\n      \"price\": 100.50\r\n    }\r\n  ],\r\n  \"host\": \"682b4a4e85717a27cfa51b21\"  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/hotels/updateHotel/682b5c444b9f597cff3055bc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"hotels",
+								"updateHotel",
+								"682b5c444b9f597cff3055bc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar hotel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc2NzA1MzQsImV4cCI6MTc0NzY3NDEzNH0.9Kprzli9jW6dDp6gdVVsJxgwxYeQIqW5z8ip_VNnlGY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Hotel Mario\",\r\n  \"description\": \"A cozy hotel near the park.\",\r\n  \"address\": \"12 Beach Avenue\",\r\n  \"telephone\": \"12340912\",\r\n  \"services\": [\r\n    {\r\n      \"type\": \"Singleroom\",\r\n      \"price\": 100.50\r\n    }\r\n  ],\r\n  \"host\": \"682b4a4e85717a27cfa51b21\"  \r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/hotels/deleteHotel/682b5df04b9f597cff3055e6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"hotels",
+								"deleteHotel",
+								"682b5df04b9f597cff3055e6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservacion",
+			"item": [
+				{
+					"name": "Crear reservacion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNjBiNTRiOWY1OTdjZmYzMDU1ZjciLCJpYXQiOjE3NDc2NzM4MTYsImV4cCI6MTc0NzY3NzQxNn0.6C0cfI3h2Iox0guwC-9Somlr9iZeMtLWnMLhvCtRins",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"startDate\": \"2025-07-25\",\r\n  \"exitDate\": \"2025-07-30\",\r\n  \"user\":\"682b60b54b9f597cff3055f7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/reservations/createReser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"reservations",
+								"createReser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista reservaciones",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNjBiNTRiOWY1OTdjZmYzMDU1ZjciLCJpYXQiOjE3NDc2NzM4MTYsImV4cCI6MTc0NzY3NzQxNn0.6C0cfI3h2Iox0guwC-9Somlr9iZeMtLWnMLhvCtRins",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"startDate\": \"2025-07-25\",\r\n  \"exitDate\": \"2025-07-30\",\r\n  \"user\":\"682b60b54b9f597cff3055f7\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/reservations/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"reservations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista reservacion ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNjBiNTRiOWY1OTdjZmYzMDU1ZjciLCJpYXQiOjE3NDc2NzM4MTYsImV4cCI6MTc0NzY3NzQxNn0.6C0cfI3h2Iox0guwC-9Somlr9iZeMtLWnMLhvCtRins",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"startDate\": \"2025-07-25\",\r\n  \"exitDate\": \"2025-07-30\",\r\n  \"user\":\"682b60b54b9f597cff3055f7\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/reservations/listReser/682b6424acf38e42aaaa195d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"reservations",
+								"listReser",
+								"682b6424acf38e42aaaa195d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar reservacion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNjBiNTRiOWY1OTdjZmYzMDU1ZjciLCJpYXQiOjE3NDc2NzQ4OTQsImV4cCI6MTc0NzY3ODQ5NH0.Cv7VcbS1FUbO0hpRnElwkBpsFUVCecu4LMdLVbmzuZI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"startDate\": \"2025-07-25\",\r\n      \"exitDate\": \"2025-07-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/reservations/updateReser/682b635bacf38e42aaaa1957",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"reservations",
+								"updateReser",
+								"682b635bacf38e42aaaa1957"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar reservacion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNjBiNTRiOWY1OTdjZmYzMDU1ZjciLCJpYXQiOjE3NDc2NzQ4OTQsImV4cCI6MTc0NzY3ODQ5NH0.Cv7VcbS1FUbO0hpRnElwkBpsFUVCecu4LMdLVbmzuZI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"startDate\": \"2025-07-25\",\r\n      \"exitDate\": \"2025-07-30\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/reservations/deleteReser/682b644aacf38e42aaaa1969",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"reservations",
+								"deleteReser",
+								"682b644aacf38e42aaaa1969"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reservacion por usuario",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNjBiNTRiOWY1OTdjZmYzMDU1ZjciLCJpYXQiOjE3NDc2NzQ4OTQsImV4cCI6MTc0NzY3ODQ5NH0.Cv7VcbS1FUbO0hpRnElwkBpsFUVCecu4LMdLVbmzuZI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"startDate\": \"2025-07-25\",\r\n      \"exitDate\": \"2025-07-30\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/reservations/userReser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"reservations",
+								"userReser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Habitaciones",
+			"item": [
+				{
+					"name": "Agregar habitaciones",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc2NzU2ODUsImV4cCI6MTc0NzY3OTI4NX0.mgaMhtc0E2QP_CfxM5CiKIhnafjXTA1YF6x1dssGKic",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name\":\"Habitacion 6\",\r\n   \"description\":\"Cuenta con lo necesario\",\r\n   \"capacity\":\"7\",\r\n   \"pricePerDay\":3000.00,\r\n   \"type\":\"DELUXE\",\r\n   \"hotel\":\"682b5b954b9f597cff3055b0\",\r\n   \"reservations\":\"682b635bacf38e42aaaa1957\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/rooms/createRoom",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"rooms",
+								"createRoom"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista habitaciones",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc2NzU2ODUsImV4cCI6MTc0NzY3OTI4NX0.mgaMhtc0E2QP_CfxM5CiKIhnafjXTA1YF6x1dssGKic",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name\":\"Habitacion 6\",\r\n   \"description\":\"Cuenta con lo necesario\",\r\n   \"capacity\":\"7\",\r\n   \"pricePerDay\":3000.00,\r\n   \"type\":\"DELUXE\",\r\n   \"hotel\":\"682b5b954b9f597cff3055b0\",\r\n   \"reservations\":\"682b635bacf38e42aaaa1957\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/rooms/getRooms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"rooms",
+								"getRooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista habitaciones individual",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc2NzU2ODUsImV4cCI6MTc0NzY3OTI4NX0.mgaMhtc0E2QP_CfxM5CiKIhnafjXTA1YF6x1dssGKic",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name\":\"Habitacion 6\",\r\n   \"description\":\"Cuenta con lo necesario\",\r\n   \"capacity\":\"7\",\r\n   \"pricePerDay\":3000.00,\r\n   \"type\":\"DELUXE\",\r\n   \"hotel\":\"682b5b954b9f597cff3055b0\",\r\n   \"reservations\":\"682b635bacf38e42aaaa1957\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/rooms/getRoomById/682b6fabff0f31eeb3b7ce78",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"rooms",
+								"getRoomById",
+								"682b6fabff0f31eeb3b7ce78"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar habitacion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc3MDA1NDEsImV4cCI6MTc0NzcwNDE0MX0._04FWGtXjSi1iLeXnGf9FtVBpTpG-VguLJ-uLdrP3UY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name\":\"Habitacion 6\",\r\n   \"description\":\"Cuenta con lo necesario y un poco mas que vale la pena pagar\",\r\n   \"capacity\":\"7\",\r\n   \"pricePerDay\":5000.00,\r\n   \"type\":\"DELUXE\",\r\n   \"hotel\":\"682b5b954b9f597cff3055b0\",\r\n   \"reservations\":\"682b635bacf38e42aaaa1957\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/rooms/updateRoom/682b6fd7ff0f31eeb3b7ce7e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"rooms",
+								"updateRoom",
+								"682b6fd7ff0f31eeb3b7ce7e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

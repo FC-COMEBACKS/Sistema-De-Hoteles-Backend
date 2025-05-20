@@ -1,0 +1,96 @@
+[{
+  "_id": {
+    "$oid": "682b635bacf38e42aaaa1957"
+  },
+  "startDate": {
+    "$date": "2025-07-25T00:00:00.000Z"
+  },
+  "exitDate": {
+    "$date": "2025-07-30T00:00:00.000Z"
+  },
+  "user": {
+    "$oid": "682b60b54b9f597cff3055f7"
+  },
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b6424acf38e42aaaa195d"
+  },
+  "startDate": {
+    "$date": "2025-01-20T00:00:00.000Z"
+  },
+  "exitDate": {
+    "$date": "2025-01-23T00:00:00.000Z"
+  },
+  "user": {
+    "$oid": "682b60b54b9f597cff3055f7"
+  },
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b6432acf38e42aaaa1960"
+  },
+  "startDate": {
+    "$date": "2025-01-25T00:00:00.000Z"
+  },
+  "exitDate": {
+    "$date": "2025-01-30T00:00:00.000Z"
+  },
+  "user": {
+    "$oid": "682b60b54b9f597cff3055f7"
+  },
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b643bacf38e42aaaa1963"
+  },
+  "startDate": {
+    "$date": "2025-03-25T00:00:00.000Z"
+  },
+  "exitDate": {
+    "$date": "2025-03-30T00:00:00.000Z"
+  },
+  "user": {
+    "$oid": "682b60b54b9f597cff3055f7"
+  },
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b6443acf38e42aaaa1966"
+  },
+  "startDate": {
+    "$date": "2025-05-25T00:00:00.000Z"
+  },
+  "exitDate": {
+    "$date": "2025-05-30T00:00:00.000Z"
+  },
+  "user": {
+    "$oid": "682b60b54b9f597cff3055f7"
+  },
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b644aacf38e42aaaa1969"
+  },
+  "startDate": {
+    "$date": "2025-07-25T00:00:00.000Z"
+  },
+  "exitDate": {
+    "$date": "2025-07-30T00:00:00.000Z"
+  },
+  "user": {
+    "$oid": "682b60b54b9f597cff3055f7"
+  },
+  "status": false,
+  "__v": 0
+}]
