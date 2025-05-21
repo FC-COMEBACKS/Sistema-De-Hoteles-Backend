@@ -50,14 +50,17 @@ export const login = async (req, res) => {
         }
 
         const webToken = await generateJWT(acces.id)
-        return res.status(200).json({
-            success: true,
-            message: "login successful",
-            userDetails: {
-                role: acces.role,
-                token: webToken
-            }
-        })
+return res.status(200).json({
+    success: true,
+    message: "login successful",
+    userDetails: {
+        _id: acces._id,           
+        name: acces.name,         
+        email: acces.email,     
+        role: acces.role,
+        token: webToken
+    }
+})
     } catch (err) {
         return res.status(500).json({
             success: false,

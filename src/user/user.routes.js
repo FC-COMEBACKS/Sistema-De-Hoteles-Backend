@@ -9,112 +9,156 @@ const router = Router();
 
 /**
  * @swagger
- * tags:
- *   name: Users
- *   description: API for managing users
- */
-
-
-/**
- * @swagger
- * /users/findUser/{uid}:
+ * /findUser/{uid}:
  *   get:
- *     summary: Get a user by ID
- *     tags: [Users]
+ *     summary: Obtiene un usuario por ID
+ *     description: Devuelve la información de un usuario específico por su ID.
+ *     tags:
+ *       - User
  *     parameters:
  *       - in: path
  *         name: uid
  *         required: true
  *         schema:
  *           type: string
- *         description: User ID
+ *         description: ID del usuario
  *     responses:
  *       200:
- *         description: User found
+ *         description: Usuario encontrado exitosamente
+ *       400:
+ *         description: ID inválido
  *       404:
- *         description: User not found
+ *         description: Usuario no encontrado
+ *       500:
+ *         description: Error interno del servidor
+ *     x-validations:
+ *       - getUserByIdValidator
+ *     x-roles:
+ *       - admin
  */
 router.get("/findUser/:uid", getUserByIdValidator, getUserById);
 
 /**
  * @swagger
- * /users/:
+ * /:
  *   get:
- *     summary: Get all users
- *     tags: [Users]
+ *     summary: Obtiene todos los usuarios
+ *     description: Devuelve una lista de todos los usuarios registrados.
+ *     tags:
+ *       - User
  *     responses:
  *       200:
- *         description: List of users
+ *         description: Lista de usuarios obtenida exitosamente
+ *       500:
+ *         description: Error interno del servidor
+ *     x-validations:
+ *       - getUserValidation
+ *     x-roles:
+ *       - admin
  */
 router.get("/", getUserValidation, getUsers);
 
 /**
  * @swagger
- * /users/deleteUserAdmin/{uid}:
+ * /deleteUserAdmin/{uid}:
  *   delete:
- *     summary: Delete a user by admin
- *     tags: [Users]
+ *     summary: Elimina un usuario por ID (admin)
+ *     description: Permite a un administrador eliminar un usuario específico por su ID.
+ *     tags:
+ *       - User
  *     parameters:
  *       - in: path
  *         name: uid
  *         required: true
  *         schema:
  *           type: string
- *         description: User ID
+ *         description: ID del usuario
  *     responses:
  *       200:
- *         description: User deleted
+ *         description: Usuario eliminado exitosamente
+ *       400:
+ *         description: ID inválido
  *       404:
- *         description: User not found
+ *         description: Usuario no encontrado
+ *       500:
+ *         description: Error interno del servidor
+ *     x-validations:
+ *       - deleteUserValidatorAdmin
+ *     x-roles:
+ *       - admin
  */
 router.delete("/deleteUserAdmin/:uid", deleteUserValidatorAdmin, deleteUserAdmin);
 
 /**
  * @swagger
- * /users/deleteUserClient:
+ * /deleteUserClient:
  *   delete:
- *     summary: Delete a user by client
- *     tags: [Users]
+ *     summary: Elimina el usuario autenticado (cliente)
+ *     description: Permite a un usuario autenticado eliminar su propia cuenta.
+ *     tags:
+ *       - User
  *     responses:
  *       200:
- *         description: User deleted
- *       404:
- *         description: User not found
+ *         description: Usuario eliminado exitosamente
+ *       401:
+ *         description: No autenticado
+ *       500:
+ *         description: Error interno del servidor
+ *     x-validations:
+ *       - deleteUserValidatorClient
+ *     x-roles:
+ *       - user
  */
 router.delete("/deleteUserClient", deleteUserValidatorClient, deleteUserClient);
 
 /**
  * @swagger
- * /users/updatePassword:
+ * /updatePassword:
  *   patch:
- *     summary: Update user password
- *     tags: [Users]
+ *     summary: Actualiza la contraseña del usuario autenticado
+ *     description: Permite a un usuario cambiar su contraseña.
+ *     tags:
+ *       - User
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
  *             type: object
+ *             required:
+ *               - oldPassword
+ *               - newPassword
  *             properties:
  *               oldPassword:
  *                 type: string
+ *                 description: "Contraseña actual"
  *               newPassword:
  *                 type: string
+ *                 description: "Nueva contraseña"
  *     responses:
  *       200:
- *         description: Password updated
+ *         description: Contraseña actualizada exitosamente
  *       400:
- *         description: Validation error
+ *         description: Datos inválidos o faltantes
+ *       401:
+ *         description: No autenticado
+ *       500:
+ *         description: Error interno del servidor
+ *     x-validations:
+ *       - updatePasswordValidator
+ *     x-roles:
+ *       - user
  */
 router.patch("/updatePassword", updatePasswordValidator, updatePassword);
 
-
 /**
  * @swagger
- * /users/updateUser:
+ * /updateUser:
  *   put:
- *     summary: Update user information
- *     tags: [Users]
+ *     summary: Actualiza los datos del usuario autenticado
+ *     description: Permite a un usuario actualizar su propia información.
+ *     tags:
+ *       - User
  *     requestBody:
  *       required: true
  *       content:
@@ -122,31 +166,43 @@ router.patch("/updatePassword", updatePasswordValidator, updatePassword);
  *           schema:
  *             type: object
  *             properties:
- *               name:
+ *               username:
  *                 type: string
+ *                 description: "Nuevo nombre de usuario"
  *               email:
  *                 type: string
+ *                 description: "Nuevo correo electrónico"
  *     responses:
  *       200:
- *         description: User updated
+ *         description: Usuario actualizado exitosamente
  *       400:
- *         description: Validation error
+ *         description: Datos inválidos o faltantes
+ *       401:
+ *         description: No autenticado
+ *       500:
+ *         description: Error interno del servidor
+ *     x-validations:
+ *       - deleteUserValidatorClient
+ *     x-roles:
+ *       - user
  */
 router.put("/updateUser", deleteUserValidatorClient, updateUserUser);
 
 /**
  * @swagger
- * /users/updateUserAdmin/{uid}:
+ * /updateUserAdmin/{uid}:
  *   put:
- *     summary: Update user information by admin
- *     tags: [Users]
+ *     summary: Actualiza los datos de un usuario por ID (admin)
+ *     description: Permite a un administrador actualizar la información de un usuario específico.
+ *     tags:
+ *       - User
  *     parameters:
  *       - in: path
  *         name: uid
  *         required: true
  *         schema:
  *           type: string
- *         description: User ID
+ *         description: ID del usuario
  *     requestBody:
  *       required: true
  *       content:
@@ -154,72 +210,112 @@ router.put("/updateUser", deleteUserValidatorClient, updateUserUser);
  *           schema:
  *             type: object
  *             properties:
- *               name:
+ *               username:
  *                 type: string
+ *                 description: "Nuevo nombre de usuario"
  *               email:
  *                 type: string
+ *                 description: "Nuevo correo electrónico"
  *     responses:
  *       200:
- *         description: User updated
+ *         description: Usuario actualizado exitosamente
  *       400:
- *         description: Validation error
+ *         description: Datos inválidos o faltantes
+ *       404:
+ *         description: Usuario no encontrado
+ *       500:
+ *         description: Error interno del servidor
+ *     x-validations:
+ *       - deleteUserValidatorAdmin
+ *     x-roles:
+ *       - admin
  */
 router.put("/updateUserAdmin/:uid", deleteUserValidatorAdmin, updateUserAdmin);
 
 /**
  * @swagger
- * /users/createUser:
+ * /createUser:
  *   post:
- *     summary: Create a new user
- *     tags: [Users]
+ *     summary: Crea un nuevo usuario (admin)
+ *     description: Permite a un administrador crear un nuevo usuario en el sistema.
+ *     tags:
+ *       - User
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
  *             type: object
+ *             required:
+ *               - username
+ *               - email
+ *               - password
  *             properties:
- *               name:
+ *               username:
  *                 type: string
+ *                 description: "Nombre de usuario"
  *               email:
  *                 type: string
+ *                 description: "Correo electrónico"
  *               password:
  *                 type: string
+ *                 description: "Contraseña"
  *     responses:
  *       201:
- *         description: User created
+ *         description: Usuario creado exitosamente
  *       400:
- *         description: Validation error
+ *         description: Datos inválidos o faltantes
+ *       409:
+ *         description: El usuario o email ya existe
+ *       500:
+ *         description: Error interno del servidor
+ *     x-validations:
+ *       - createUserValidation
+ *     x-roles:
+ *       - admin
  */
 router.post("/createUser", createUserValidation, register);
 
 /**
  * @swagger
- * /users/updateRole/{uid}:
+ * /updateRole/{uid}:
  *   patch:
- *     summary: Update user role
- *     tags: [Users]
+ *     summary: Actualiza el rol de un usuario por ID
+ *     description: Permite a un administrador actualizar el rol de un usuario específico.
+ *     tags:
+ *       - User
  *     parameters:
  *       - in: path
  *         name: uid
  *         required: true
  *         schema:
  *           type: string
- *         description: User ID
+ *         description: ID del usuario
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
  *             type: object
+ *             required:
+ *               - role
  *             properties:
  *               role:
  *                 type: string
+ *                 description: "Nuevo rol del usuario (ej: user, admin)"
  *     responses:
  *       200:
- *         description: Role updated
+ *         description: Rol actualizado exitosamente
  *       400:
- *         description: Validation error
+ *         description: Datos inválidos o faltantes
+ *       404:
+ *         description: Usuario no encontrado
+ *       500:
+ *         description: Error interno del servidor
+ *     x-validations:
+ *       - updateRoleValidator
+ *     x-roles:
+ *       - admin
  */
 router.patch("/updateRole/:uid", updateRoleValidator, updateRole);
 

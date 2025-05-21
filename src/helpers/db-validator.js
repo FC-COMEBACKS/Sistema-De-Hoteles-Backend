@@ -18,12 +18,10 @@ export const userExists = async (uid = " ") => {
 
 export const isClient = async (uid = " ") =>{
     const existe = await User.findById(uid)
-    console.log(existe)
     if(!existe){
         throw new Error("The client does not exist")
     }
-
-    if(existe.role !== "CLIENT_ROLE" && existe.role !== "HOST_ROLE"){
+    if(existe.role !== "CLIENT_ROLE" && existe.role !== "HOST_ROLE" && existe.role !== "ADMIN_ROLE"){
         throw new Error("Is not a client")
     }
 }

@@ -5,92 +5,115 @@ import { validatorLogin, validatorRegister } from "../middlewares/user-validator
 
 const router = Router();
 
-/**
- * @swagger
- * tags:
- *   name: Auth
- *   description: API for managing authentication
- */
-/**
- * @swagger
- * /auth/register:
- *   post:
- *     summary: Register a new user
- *     tags: [Auth]
- *     requestBody:
- *       required: true
- *       content:
- *         multipart/form-data:
- *           schema:
- *             type: object
- *             properties:
- *               img:
- *                 type: string
- *                 format: binary
- *                 description: The image file to upload
- *               username:
- *                 type: string
- *                 description: The username of the user
- *                 example: johndoe
- *               password:
- *                 type: string
- *                 description: The password of the user
- *                 example: StrongPassword123
- *               email:
- *                 type: string
- *                 description: The email of the user
- *                 example: johndoe@example.com
- *     responses:
- *       201:
- *         description: User registered successfully
- *       400:
- *         description: Validation error
- *       500:
- *         description: Internal server error
- *     security: []
- */
-router.post("/register", validatorRegister, register);
 
 /**
  * @swagger
- * /auth/login:
+ * /register:
  *   post:
- *     summary: Log in a user
- *     tags: [Auth]
+ *     summary: Registra un nuevo usuario
+ *     description: Crea un nuevo usuario en el sistema. Solo usuarios no autenticados pueden acceder a este endpoint.
+ *     tags:
+ *       - Auth
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
  *             type: object
+ *             required:
+ *               - username
+ *               - email
+ *               - password
  *             properties:
  *               username:
  *                 type: string
- *                 description: The username of the user
- *                 example: johndoe
+ *                 description: Nombre de usuario único
+ *               email:
+ *                 type: string
+ *                 format: email
+ *                 description: Correo electrónico válido
  *               password:
  *                 type: string
- *                 description: The password of the user
- *                 example: StrongPassword123
+ *                 format: password
+ *                 minLength: 6
+ *                 description: Contraseña del usuario (mínimo 6 caracteres)
  *     responses:
- *       200:
- *         description: User logged in successfully
+ *       201:
+ *         description: Usuario registrado exitosamente
  *         content:
  *           application/json:
  *             schema:
  *               type: object
  *               properties:
+ *                 user:
+ *                   $ref: '#/components/schemas/User'
  *                 token:
  *                   type: string
- *                   description: JWT token for authentication
- *                   example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+ *                   description: Token JWT de autenticación
  *       400:
- *         description: Validation error
- *       401:
- *         description: Invalid credentials
+ *         description: Datos inválidos o faltantes
+ *       409:
+ *         description: El usuario o email ya existe
  *       500:
- *         description: Internal server error
+ *         description: Error interno del servidor
  *     security: []
+ *     x-roles:
+ *       - public
+ *     x-validations:
+ *       - validatorRegister
+ */
+router.post("/register", validatorRegister, register);
+
+/**
+ * @swagger
+ * /login:
+ *   post:
+ *     summary: Inicia sesión de usuario
+ *     description: Autentica a un usuario registrado y retorna un token JWT.
+ *     tags:
+ *       - Auth
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - email
+ *               - password
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 format: email
+ *                 description: Correo electrónico registrado
+ *               password:
+ *                 type: string
+ *                 format: password
+ *                 description: Contraseña del usuario
+ *     responses:
+ *       200:
+ *         description: Inicio de sesión exitoso
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 user:
+ *                   $ref: '#/components/schemas/User'
+ *                 token:
+ *                   type: string
+ *                   description: Token JWT de autenticación
+ *       400:
+ *         description: Datos inválidos o faltantes
+ *       401:
+ *         description: Credenciales incorrectas
+ *       500:
+ *         description: Error interno del servidor
+ *     security: []
+ *     x-roles:
+ *       - public
+ *     x-validations:
+ *       - validatorLogin
  */
 router.post("/login", validatorLogin, login);
 

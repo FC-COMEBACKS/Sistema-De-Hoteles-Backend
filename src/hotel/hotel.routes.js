@@ -6,81 +6,75 @@ const router = Router();
 
 /**
  * @swagger
- * tags:
- *   name: Hotel
- *   description: API for managing hotels
- * components:
- *   securitySchemes:
- *     bearerAuth:
- *       type: http
- *       scheme: bearer
- *       bearerFormat: JWT
- */
-/**
- * @swagger
- * /hotels/createHotel:
+ * /createHotel:
  *   post:
- *     summary: Crear un nuevo hotel
- *     tags: [Hotel]
- *     security:
- *       - bearerAuth: []
+ *     summary: Crea un nuevo hotel
+ *     description: Permite crear un hotel en el sistema.
+ *     tags:
+ *       - Hotel
  *     requestBody:
  *       required: true
  *       content:
- *         multipart/form-data:
+ *         application/json:
  *           schema:
  *             type: object
+ *             required:
+ *               - name
+ *               - address
  *             properties:
  *               name:
  *                 type: string
- *               host:
+ *                 description: Nombre del hotel
+ *               address:
  *                 type: string
- *               pictures:
- *                 type: array
- *                 items:
- *                   type: string
- *                   format: binary
+ *                 description: Dirección del hotel
+ *               stars:
+ *                 type: integer
+ *                 description: Cantidad de estrellas
  *     responses:
  *       201:
- *         description: Hotel creado correctamente
+ *         description: Hotel creado exitosamente
  *       400:
- *         description: Error de validación o datos incorrectos
+ *         description: Datos inválidos o faltantes
+ *       409:
+ *         description: El hotel ya existe
+ *       500:
+ *         description: Error interno del servidor
+ *     x-validations:
+ *       - createHotelValidator
+ *     x-roles:
+ *       - admin
  */
 router.post("/createHotel", createHotelValidator, createHotel);
 
 /**
  * @swagger
- * /hotels/:
+ * /:
  *   get:
- *     summary: Obtener todos los hoteles
- *     tags: [Hotel]
- *     security:
- *       - bearerAuth: []
- *     parameters:
- *       - in: query
- *         name: limit
- *         schema:
- *           type: integer
- *         description: Límite de resultados
- *       - in: query
- *         name: from
- *         schema:
- *           type: integer
- *         description: Offset de resultados
+ *     summary: Obtiene todos los hoteles
+ *     description: Devuelve una lista de todos los hoteles registrados.
+ *     tags:
+ *       - Hotel
  *     responses:
  *       200:
- *         description: Lista de hoteles
+ *         description: Lista de hoteles obtenida exitosamente
+ *       500:
+ *         description: Error interno del servidor
+ *     x-validations:
+ *       - getHotelsValidator
+ *     x-roles:
+ *       - public
  */
 router.get("/", getHotelsValidator, getHotels);
 
 /**
  * @swagger
- * /hotels/findHotel/{hid}:
+ * /findHotel/{hid}:
  *   get:
- *     summary: Obtener hotel por ID
- *     tags: [Hotel]
- *     security:
- *       - bearerAuth: []
+ *     summary: Obtiene un hotel por ID
+ *     description: Devuelve la información de un hotel específico por su ID.
+ *     tags:
+ *       - Hotel
  *     parameters:
  *       - in: path
  *         name: hid
@@ -90,20 +84,28 @@ router.get("/", getHotelsValidator, getHotels);
  *         description: ID del hotel
  *     responses:
  *       200:
- *         description: Hotel encontrado
+ *         description: Hotel encontrado exitosamente
+ *       400:
+ *         description: ID inválido
  *       404:
  *         description: Hotel no encontrado
+ *       500:
+ *         description: Error interno del servidor
+ *     x-validations:
+ *       - getHotelByIdValidator
+ *     x-roles:
+ *       - public
  */
 router.get("/findHotel/:hid", getHotelByIdValidator, getHotelById);
 
 /**
  * @swagger
- * /hotels/updateHotel/{hid}:
+ * /updateHotel/{hid}:
  *   put:
- *     summary: Actualizar información de un hotel
- *     tags: [Hotel]
- *     security:
- *       - bearerAuth: []
+ *     summary: Actualiza un hotel por ID
+ *     description: Permite actualizar la información de un hotel existente.
+ *     tags:
+ *       - Hotel
  *     parameters:
  *       - in: path
  *         name: hid
@@ -114,35 +116,43 @@ router.get("/findHotel/:hid", getHotelByIdValidator, getHotelById);
  *     requestBody:
  *       required: true
  *       content:
- *         multipart/form-data:
+ *         application/json:
  *           schema:
  *             type: object
  *             properties:
  *               name:
  *                 type: string
- *               host:
+ *                 description: Nombre del hotel
+ *               address:
  *                 type: string
- *               pictures:
- *                 type: array
- *                 items:
- *                   type: string
- *                   format: binary
+ *                 description: Dirección del hotel
+ *               stars:
+ *                 type: integer
+ *                 description: Cantidad de estrellas
  *     responses:
  *       200:
- *         description: Hotel actualizado correctamente
+ *         description: Hotel actualizado exitosamente
+ *       400:
+ *         description: Datos inválidos o faltantes
  *       404:
  *         description: Hotel no encontrado
+ *       500:
+ *         description: Error interno del servidor
+ *     x-validations:
+ *       - updateHotelValidator
+ *     x-roles:
+ *       - admin
  */
 router.put("/updateHotel/:hid", updateHotelValidator, updateHotel);
 
 /**
  * @swagger
- * /hotels/deleteHotel/{hid}:
+ * /deleteHotel/{hid}:
  *   delete:
- *     summary: Eliminar un hotel
- *     tags: [Hotel]
- *     security:
- *       - bearerAuth: []
+ *     summary: Elimina un hotel por ID
+ *     description: Permite eliminar un hotel existente del sistema.
+ *     tags:
+ *       - Hotel
  *     parameters:
  *       - in: path
  *         name: hid
@@ -152,9 +162,17 @@ router.put("/updateHotel/:hid", updateHotelValidator, updateHotel);
  *         description: ID del hotel
  *     responses:
  *       200:
- *         description: Hotel eliminado correctamente
+ *         description: Hotel eliminado exitosamente
+ *       400:
+ *         description: ID inválido
  *       404:
  *         description: Hotel no encontrado
+ *       500:
+ *         description: Error interno del servidor
+ *     x-validations:
+ *       - deleteHotelValidator
+ *     x-roles:
+ *       - admin
  */
 router.delete("/deleteHotel/:hid", deleteHotelValidator, deleteHotel);
 

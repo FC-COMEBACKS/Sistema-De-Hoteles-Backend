@@ -21,18 +21,48 @@ const router = Router();
  * /createReser:
  *   post:
  *     summary: Crea una nueva reservación
- *     tags: [Reservaciones]
+ *     description: Permite crear una reservación para una habitación.
+ *     tags:
+ *       - Reservation
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
  *             type: object
+ *             required:
+ *               - userId
+ *               - roomId
+ *               - checkIn
+ *               - checkOut
+ *             properties:
+ *               userId:
+ *                 type: string
+ *                 description: ID del usuario que realiza la reservación
+ *               roomId:
+ *                 type: string
+ *                 description: ID de la habitación a reservar
+ *               checkIn:
+ *                 type: string
+ *                 format: date
+ *                 description: Fecha de entrada (YYYY-MM-DD)
+ *               checkOut:
+ *                 type: string
+ *                 format: date
+ *                 description: Fecha de salida (YYYY-MM-DD)
  *     responses:
  *       201:
  *         description: Reservación creada exitosamente
+ *       400:
+ *         description: Datos inválidos o faltantes
+ *       409:
+ *         description: Conflicto de reservación
  *       500:
- *         description: Error al crear la reservación
+ *         description: Error interno del servidor
+ *     x-validations:
+ *       - reserveRoomValidator
+ *     x-roles:
+ *       - user
  */
 router.post("/createReser",reserveRoomValidator, createReservation);
 
@@ -40,13 +70,17 @@ router.post("/createReser",reserveRoomValidator, createReservation);
  * @swagger
  * /:
  *   get:
- *     summary: Lista todas las reservaciones activas
- *     tags: [Reservaciones]
+ *     summary: Obtiene todas las reservaciones
+ *     description: Devuelve una lista de todas las reservaciones registradas.
+ *     tags:
+ *       - Reservation
  *     responses:
  *       200:
- *         description: Lista de reservaciones
+ *         description: Lista de reservaciones obtenida exitosamente
  *       500:
- *         description: Error al obtener las reservaciones
+ *         description: Error interno del servidor
+ *     x-roles:
+ *       - admin
  */
 router.get("/", getReservations);
 
@@ -55,7 +89,9 @@ router.get("/", getReservations);
  * /listReser/{id}:
  *   get:
  *     summary: Obtiene una reservación por ID
- *     tags: [Reservaciones]
+ *     description: Devuelve la información de una reservación específica por su ID.
+ *     tags:
+ *       - Reservation
  *     parameters:
  *       - in: path
  *         name: id
@@ -65,20 +101,26 @@ router.get("/", getReservations);
  *         description: ID de la reservación
  *     responses:
  *       200:
- *         description: Reservación encontrada
+ *         description: Reservación encontrada exitosamente
+ *       400:
+ *         description: ID inválido
  *       404:
  *         description: Reservación no encontrada
  *       500:
- *         description: Error al obtener la reservación
+ *         description: Error interno del servidor
+ *     x-roles:
+ *       - user
  */
 router.get("/listReser/:id", getReservationById);
 
 /**
  * @swagger
- * /updateReser/:{id}:
+ * /updateReser/{id}:
  *   put:
- *     summary: Edita una reservación por ID
- *     tags: [Reservaciones]
+ *     summary: Actualiza una reservación por ID
+ *     description: Permite actualizar la información de una reservación existente.
+ *     tags:
+ *       - Reservation
  *     parameters:
  *       - in: path
  *         name: id
@@ -92,22 +134,39 @@ router.get("/listReser/:id", getReservationById);
  *         application/json:
  *           schema:
  *             type: object
+ *             properties:
+ *               checkIn:
+ *                 type: string
+ *                 format: date
+ *                 description: Nueva fecha de entrada (YYYY-MM-DD)
+ *               checkOut:
+ *                 type: string
+ *                 format: date
+ *                 description: Nueva fecha de salida (YYYY-MM-DD)
  *     responses:
  *       200:
- *         description: Reservación actualizada
+ *         description: Reservación actualizada exitosamente
+ *       400:
+ *         description: Datos inválidos o faltantes
  *       404:
  *         description: Reservación no encontrada
  *       500:
- *         description: Error al actualizar la reservación
+ *         description: Error interno del servidor
+ *     x-validations:
+ *       - updateReservationValidator
+ *     x-roles:
+ *       - user
  */
 router.put("/updateReser/:id",updateReservationValidator, updateReservation);
 
 /**
  * @swagger
- * /deleteReser/:{id}:
+ * /deleteReser/{id}:
  *   delete:
- *     summary: Elimina (soft delete) una reservación por ID
- *     tags: [Reservaciones]
+ *     summary: Elimina una reservación por ID
+ *     description: Permite cancelar una reservación existente.
+ *     tags:
+ *       - Reservation
  *     parameters:
  *       - in: path
  *         name: id
@@ -117,25 +176,39 @@ router.put("/updateReser/:id",updateReservationValidator, updateReservation);
  *         description: ID de la reservación
  *     responses:
  *       200:
- *         description: Reservación eliminada
+ *         description: Reservación eliminada exitosamente
+ *       400:
+ *         description: ID inválido
  *       404:
  *         description: Reservación no encontrada
  *       500:
- *         description: Error al eliminar la reservación
+ *         description: Error interno del servidor
+ *     x-validations:
+ *       - cancelReservationValidator
+ *     x-roles:
+ *       - user
  */
 router.delete("/deleteReser/:id",cancelReservationValidator, deleteReservation);
 
 /**
  * @swagger
- * /userReservations:
+ * /userReser:
  *   get:
- *     summary: Obtiene el historial de reservaciones de un usuario
- *     tags: [Reservaciones]
+ *     summary: Obtiene las reservaciones del usuario autenticado
+ *     description: Devuelve una lista de reservaciones asociadas al usuario autenticado.
+ *     tags:
+ *       - Reservation
  *     responses:
  *       200:
- *         description: Historial de reservaciones obtenido exitosamente
+ *         description: Lista de reservaciones del usuario obtenida exitosamente
+ *       401:
+ *         description: No autenticado
  *       500:
- *         description: Error al obtener el historial de reservaciones
+ *         description: Error interno del servidor
+ *     x-validations:
+ *       - getUserReservationsValidator
+ *     x-roles:
+ *       - user
  */
 router.get("/userReser", getUserReservationsValidator, getUserReservations);
 

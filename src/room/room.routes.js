@@ -6,63 +6,75 @@ const router = Router();
 
 /**
  * @swagger
- * /room/createRoom:
+ * /createRoom:
  *   post:
- *     summary: Crear una nueva habitación
+ *     summary: Crea una nueva habitación
+ *     description: Permite crear una habitación en el sistema.
  *     tags:
  *       - Room
  *     requestBody:
  *       required: true
  *       content:
- *         multipart/form-data:
+ *         application/json:
  *           schema:
  *             type: object
+ *             required:
+ *               - hotelId
+ *               - number
+ *               - type
  *             properties:
- *               name:
+ *               hotelId:
  *                 type: string
- *                 example: Habitación Deluxe
- *               description:
+ *                 description: ID del hotel al que pertenece la habitación
+ *               number:
  *                 type: string
- *                 example: Habitación con vista al mar
- *               capacity:
- *                 type: string
- *                 example: 2
- *               pricePerDay:
- *                 type: number
- *                 example: 120
+ *                 description: Número de la habitación
  *               type:
  *                 type: string
- *                 enum: [SINGLE, DOUBLE, SUITE, DELUXE]
- *                 example: DELUXE
- *               images:
- *                 type: array
- *                 items:
- *                   type: string
- *                   format: binary
+ *                 description: "Tipo de habitación (ej: simple, doble, suite)"
+ *               price:
+ *                 type: number
+ *                 description: Precio por noche
  *     responses:
  *       201:
  *         description: Habitación creada exitosamente
  *       400:
- *         description: Error de validación
+ *         description: Datos inválidos o faltantes
+ *       409:
+ *         description: La habitación ya existe
+ *       500:
+ *         description: Error interno del servidor
+ *     x-validations:
+ *       - validateCrateRoom
+ *     x-roles:
+ *       - admin
  */
+router.post("/createRoom", validateCrateRoom, createRoom);
 
 /**
  * @swagger
- * /room/getRooms:
+ * /getRooms:
  *   get:
- *     summary: Obtener todas las habitaciones
+ *     summary: Obtiene todas las habitaciones
+ *     description: Devuelve una lista de todas las habitaciones registradas.
  *     tags:
  *       - Room
  *     responses:
  *       200:
- *         description: Lista de habitaciones
+ *         description: Lista de habitaciones obtenida exitosamente
+ *       500:
+ *         description: Error interno del servidor
+ *     x-roles:
+ *       - public
  */
+router.get("/getRooms", getRooms);
 
 /**
  * @swagger
- * /room/getRoomById/{rid}:
+ * /getRoomById/{rid}:
  *   get:
- *     summary: Obtener una habitación por ID
+ *     summary: Obtiene una habitación por ID
+ *     description: Devuelve la información de una habitación específica por su ID.
  *     tags:
  *       - Room
  *     parameters:
@@ -74,16 +86,26 @@ const router = Router();
  *         description: ID de la habitación
  *     responses:
  *       200:
- *         description: Habitación encontrada
+ *         description: Habitación encontrada exitosamente
+ *       400:
+ *         description: ID inválido
  *       404:
  *         description: Habitación no encontrada
+ *       500:
+ *         description: Error interno del servidor
+ *     x-validations:
+ *       - validateGetRoomById
+ *     x-roles:
+ *       - public
  */
+router.get("/getRoomById/:rid", validateGetRoomById, getRoomById);
 
 /**
  * @swagger
- * /room/updateRoom/{rid}:
+ * /updateRoom/{rid}:
  *   put:
- *     summary: Actualizar datos de una habitación
+ *     summary: Actualiza una habitación por ID
+ *     description: Permite actualizar la información de una habitación existente.
  *     tags:
  *       - Room
  *     parameters:
@@ -100,64 +122,29 @@ const router = Router();
  *           schema:
  *             type: object
  *             properties:
- *               name:
+ *               number:
  *                 type: string
- *               description:
- *                 type: string
- *               capacity:
- *                 type: string
- *               pricePerDay:
- *                 type: number
+ *                 description: Nuevo número de la habitación
  *               type:
  *                 type: string
- *                 enum: [SINGLE, DOUBLE, SUITE, DELUXE]
+ *                 description: Nuevo tipo de habitación
+ *               price:
+ *                 type: number
+ *                 description: Nuevo precio por noche
  *     responses:
  *       200:
- *         description: Habitación actualizada
+ *         description: Habitación actualizada exitosamente
  *       400:
- *         description: Error de validación
+ *         description: Datos inválidos o faltantes
+ *       404:
+ *         description: Habitación no encontrada
+ *       500:
+ *         description: Error interno del servidor
+ *     x-validations:
+ *       - validateUpdateRoom
+ *     x-roles:
+ *       - admin
  */
-
-/**
- * @swagger
- * /room/updateImages/{rid}:
- *   patch:
- *     summary: Actualizar imágenes de una habitación
- *     tags:
- *       - Room
- *     parameters:
- *       - in: path
- *         name: rid
- *         required: true
- *         schema:
- *           type: string
- *         description: ID de la habitación
- *     requestBody:
- *       required: true
- *       content:
- *         multipart/form-data:
- *           schema:
- *             type: object
- *             properties:
- *               images:
- *                 type: array
- *                 items:
- *                   type: string
- *                   format: binary
- *     responses:
- *       200:
- *         description: Imágenes actualizadas
- *       400:
- *         description: Error de validación
- */
-
-router.post("/createRoom", validateCrateRoom, createRoom);
-
-router.get("/getRooms", getRooms);
-
-router.get("/getRoomById/:rid", validateGetRoomById, getRoomById);
-
 router.put("/updateRoom/:rid", validateUpdateRoom, updateRoom);
-
 
 export default router;
