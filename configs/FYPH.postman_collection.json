@@ -820,7 +820,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNjBiNTRiOWY1OTdjZmYzMDU1ZjciLCJpYXQiOjE3NDc2NzM4MTYsImV4cCI6MTc0NzY3NzQxNn0.6C0cfI3h2Iox0guwC-9Somlr9iZeMtLWnMLhvCtRins",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNjBiNTRiOWY1OTdjZmYzMDU1ZjciLCJpYXQiOjE3NDgwMjI3OTcsImV4cCI6MTc0ODAyNjM5N30.WYdT6O0UB4B5ClBbMXjeTvOPrbM3kYnIToGknP20ReA",
 									"type": "string"
 								}
 							]
@@ -829,7 +829,12 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"startDate\": \"2025-07-25\",\r\n  \"exitDate\": \"2025-07-30\",\r\n  \"user\":\"682b60b54b9f597cff3055f7\"\r\n}"
+							"raw": "{\r\n  \"startDate\": \"2025-07-25\",\r\n  \"exitDate\": \"2025-07-30\",\r\n  \"user\":\"682b60b54b9f597cff3055f7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:3000/FYPH/v1/reservations/",
@@ -1063,7 +1068,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc2NzU2ODUsImV4cCI6MTc0NzY3OTI4NX0.mgaMhtc0E2QP_CfxM5CiKIhnafjXTA1YF6x1dssGKic",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc5NjExMDYsImV4cCI6MTc0Nzk2NDcwNn0.WCexfEvaFwJS0pyi18VxZpHt75EEwQacgArPszGVH9I",
 									"type": "string"
 								}
 							]
@@ -1072,7 +1077,12 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"name\":\"Habitacion 6\",\r\n   \"description\":\"Cuenta con lo necesario\",\r\n   \"capacity\":\"7\",\r\n   \"pricePerDay\":3000.00,\r\n   \"type\":\"DELUXE\",\r\n   \"hotel\":\"682b5b954b9f597cff3055b0\",\r\n   \"reservations\":\"682b635bacf38e42aaaa1957\"\r\n}"
+							"raw": "{\r\n   \"name\":\"Habitacion 6\",\r\n   \"description\":\"Cuenta con lo necesario\",\r\n   \"capacity\":\"7\",\r\n   \"pricePerDay\":3000.00,\r\n   \"type\":\"DELUXE\",\r\n   \"hotel\":\"682b5b954b9f597cff3055b0\",\r\n   \"reservations\":\"682b635bacf38e42aaaa1957\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:3000/FYPH/v1/rooms/getRooms",

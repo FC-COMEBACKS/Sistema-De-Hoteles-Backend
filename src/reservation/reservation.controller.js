@@ -3,6 +3,8 @@ import Reservation from "./reservation.model.js";
 export const createReservation = async (req, res) => {
     try {
         const data = req.body;
+        data.user = req.usuario._id; 
+
         const reservation = await Reservation.create(data);
         res.status(201).json({
             success: true,
@@ -20,7 +22,19 @@ export const createReservation = async (req, res) => {
 
 export const getReservations = async (req, res) => {
     try {
-        const reservations = await Reservation.find({ status: true });
+        const usuario = req.usuario;
+        let filter = { status: true };
+
+
+        if (!usuario || usuario.role !== "ADMIN_ROLE") {
+            filter.user = usuario._id;
+        }
+
+        const reservations = await Reservation.find(filter)
+            .populate('user', 'name email')
+            .populate('hotel', 'name')
+            .populate('room', 'name');
+
         res.status(200).json({
             success: true,
             reservations
@@ -37,7 +51,10 @@ export const getReservations = async (req, res) => {
 export const getReservationById = async (req, res) => {
     try {
         const { id } = req.params;
-        const reservation = await Reservation.findById(id);
+        const reservation = await Reservation.findById(id)
+            .populate('user', 'name email')
+            .populate('hotel', 'name')
+            .populate('room', 'name');
         if (!reservation || !reservation.status) {
             return res.status(404).json({
                 success: false,
@@ -109,8 +126,9 @@ export const deleteReservation = async (req, res) => {
 export const getUserReservations = async (req, res) => {
     try {
         const { usuario } = req;
-
         const reservations = await Reservation.find({ user: usuario._id })
+            .populate('hotel', 'name')
+            .populate('room', 'name');
         return res.status(200).json({
             success: true,
             reservations,

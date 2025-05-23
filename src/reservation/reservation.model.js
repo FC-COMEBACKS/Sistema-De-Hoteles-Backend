@@ -14,6 +14,16 @@ const reservationSchema = Schema({
         ref: "User",
         required: true
     },
+    hotel: {
+        type: Schema.Types.ObjectId,
+        ref: "Hotel",
+        required: true
+    },
+    room: {
+        type: Schema.Types.ObjectId,
+        ref: "Room",
+        required: true
+    },
     status: {
         type: Boolean,
         default: true
@@ -21,9 +31,9 @@ const reservationSchema = Schema({
 })
 
 reservationSchema.methods.toJSON = function () {
-    const { user, _id, ...reservation } = this.toObject()
-    reservation.id = _id 
-    return reservation
+    const { _id, ...reservation } = this.toObject();
+    reservation.id = _id;
+    return reservation;
 }
 
 export default model("Reservation", reservationSchema)

@@ -56,6 +56,7 @@ export const getHotels = async (req, res) =>{
             hotels
         })
     }catch (error) {
+        console.error("Error en getHotels:", error); 
         return res.status(500).json({
             msg: "Error al obtener los hoteles",
             error: error.message

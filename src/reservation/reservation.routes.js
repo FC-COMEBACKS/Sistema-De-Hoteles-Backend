@@ -82,7 +82,7 @@ router.post("/createReser",reserveRoomValidator, createReservation);
  *     x-roles:
  *       - admin
  */
-router.get("/", getReservations);
+router.get("/", getUserReservationsValidator, getReservations);
 
 /**
  * @swagger
