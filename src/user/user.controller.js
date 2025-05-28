@@ -108,9 +108,10 @@ export const updatePassword = async (req, res) => {
 
         const user = await User.findById(usuario._id);
 
-        const matchOldAndNewPassword = await verify(user.password, newPassword);
+        
+        const isSamePassword = await verify(user.password, newPassword);
 
-        if (matchOldAndNewPassword) {
+        if (isSamePassword) {
             return res.status(400).json({
                 success: false,
                 message: "La nueva contraseña no puede ser igual a la anterior"
