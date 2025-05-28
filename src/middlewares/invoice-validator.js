@@ -1,8 +1,12 @@
 import { body, param } from "express-validator";
 import { validateField } from "./validate-fields.js";
 import { handleErrors } from "./handle-errors.js";
+import { validateJWT } from "./validate-jwt.js";
+import { hasRoles } from "./validate-roles.js";
 
 export const createInvoiceValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE"),
     param("reservationId").isMongoId().withMessage("ID de reservación inválido"),
     body("paymentMethod").notEmpty().withMessage("El método de pago es obligatorio")
         .isIn(["CREDIT_CARD", "DEBIT_CARD", "CASH", "BANK_TRANSFER"]).withMessage("Método de pago inválido"),
@@ -14,3 +18,10 @@ export const createInvoiceValidator = [
     validateField,
     handleErrors
 ];
+
+export const payInvoiceValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE"),
+    validateField,
+    handleErrors
+]
