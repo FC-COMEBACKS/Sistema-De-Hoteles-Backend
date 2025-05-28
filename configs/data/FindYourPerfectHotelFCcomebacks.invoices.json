@@ -1,0 +1,174 @@
+[{
+  "_id": {
+    "$oid": "6836b44dcb237400a9de901f"
+  },
+  "reservation": {
+    "$oid": "6830b46b30cde22324355069"
+  },
+  "issueDate": {
+    "$date": "2025-05-28T06:59:25.715Z"
+  },
+  "dueDate": {
+    "$date": "2025-06-01T00:00:00.000Z"
+  },
+  "additionalCharges": [
+    {
+      "serviceType": "Singleroom",
+      "description": "Upgrade a suite",
+      "amount": 201,
+      "_id": {
+        "$oid": "6836b44dcb237400a9de9020"
+      }
+    }
+  ],
+  "amount": 201,
+  "paymentMethod": "CREDIT_CARD",
+  "paymentStatus": "PAID",
+  "invoiceNumber": "INV-1748415565713",
+  "status": true,
+  "history": [
+    {
+      "date": {
+        "$date": "2025-05-28T06:59:25.715Z"
+      },
+      "action": "CREATED",
+      "details": "Factura generada al finalizar la estadía.",
+      "_id": {
+        "$oid": "6836b44dcb237400a9de9021"
+      }
+    },
+    {
+      "date": {
+        "$date": "2025-05-28T07:11:22.105Z"
+      },
+      "action": "PAID",
+      "details": "Factura pagada y PDF generado.",
+      "_id": {
+        "$oid": "6836b71af04b0aa5223841f7"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-05-28T06:59:25.812Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-28T07:11:22.130Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6836b9a2da58e4662c1df171"
+  },
+  "reservation": {
+    "$oid": "6830b46b30cde22324355069"
+  },
+  "issueDate": {
+    "$date": "2025-05-28T07:22:10.573Z"
+  },
+  "dueDate": {
+    "$date": "2025-06-01T00:00:00.000Z"
+  },
+  "additionalCharges": [
+    {
+      "serviceType": "Singleroom",
+      "description": "Upgrade a singleroom",
+      "amount": 100.5,
+      "_id": {
+        "$oid": "6836b9a2da58e4662c1df172"
+      }
+    }
+  ],
+  "amount": 100.5,
+  "paymentMethod": "CREDIT_CARD",
+  "paymentStatus": "PAID",
+  "invoiceNumber": "INV-1748416930572",
+  "status": true,
+  "history": [
+    {
+      "date": {
+        "$date": "2025-05-28T07:22:10.573Z"
+      },
+      "action": "CREATED",
+      "details": "Factura generada al finalizar la estadía.",
+      "_id": {
+        "$oid": "6836b9a2da58e4662c1df173"
+      }
+    },
+    {
+      "date": {
+        "$date": "2025-05-28T07:42:09.520Z"
+      },
+      "action": "PAID",
+      "details": "Factura pagada y PDF generado.",
+      "_id": {
+        "$oid": "6836be516a3c9dddb12cd624"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-05-28T07:22:10.661Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-28T07:42:09.569Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6836c455a0e21a1a7477bcda"
+  },
+  "reservation": {
+    "$oid": "6830b46b30cde22324355069"
+  },
+  "issueDate": {
+    "$date": "2025-05-28T08:07:49.808Z"
+  },
+  "dueDate": {
+    "$date": "2025-06-01T00:00:00.000Z"
+  },
+  "additionalCharges": [
+    {
+      "serviceType": "Singleroom",
+      "description": "Upgrade a singleroom",
+      "amount": 301.5,
+      "_id": {
+        "$oid": "6836c455a0e21a1a7477bcdb"
+      }
+    }
+  ],
+  "amount": 301.5,
+  "paymentMethod": "CREDIT_CARD",
+  "paymentStatus": "PAID",
+  "invoiceNumber": "INV-1748419669808",
+  "status": true,
+  "history": [
+    {
+      "date": {
+        "$date": "2025-05-28T08:07:49.808Z"
+      },
+      "user": {
+        "$oid": "682b45ab616986de26f0d417"
+      },
+      "action": "CREATED",
+      "details": "Factura generada al finalizar la estadía.",
+      "_id": {
+        "$oid": "6836c455a0e21a1a7477bcdc"
+      }
+    },
+    {
+      "date": {
+        "$date": "2025-05-28T08:12:37.049Z"
+      },
+      "action": "PAID",
+      "details": "Factura pagada y PDF generado.",
+      "_id": {
+        "$oid": "6836c575a0e21a1a7477bce7"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-05-28T08:07:49.849Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-28T08:12:37.072Z"
+  }
+}]
