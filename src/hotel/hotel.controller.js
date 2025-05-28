@@ -1,0 +1,173 @@
+import Hotel from './hotel.model.js' 
+import User from '../user/user.model.js' 
+
+export const createHotel = async (req, res) => {
+    try {
+        const data = req.body
+        
+        const adminUser = req.usuario
+        
+        data.host = adminUser._id
+
+        const host = await User.findById(data.host)
+        if (!host || !host.status) {
+            return res.status(404).json({
+                msg: "Host no encontrado"
+            })
+        }
+
+        if (host.role !== "HOST_ROLE" && host.role !== "ADMIN_ROLE") {
+            return res.status(400).json({
+                msg: "El usuario asignado no tiene las credenciales necesarias"
+            })
+        }
+        const newHotel = await Hotel.create(data)
+
+        return res.status(201).json({
+            success: true,
+            msg: "Hotel creado correctamente",
+            newHotel
+        })
+
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            msg: "Error al crear el hotel",
+            error: error.message
+        })
+    }
+}
+
+export const getHotels = async (req, res) =>{
+    try{
+        const { limit = 10, from = 0 } = req.query
+        const query = { status: true }
+        const [total, hotels] = await Promise.all([
+            Hotel.countDocuments(query),
+            Hotel.find(query)
+            .populate("host", "name email")
+            .skip(Number(from))
+            .limit(Number(limit))
+        ])
+
+        return res.status(200).json({
+            success: true,
+            total,
+            hotels
+        })
+    }catch (error) {
+        console.error("Error en getHotels:", error); 
+        return res.status(500).json({
+            msg: "Error al obtener los hoteles",
+            error: error.message
+        })
+    }
+}
+
+export const getHotelById = async (req, res) => {
+    try {
+        const { hid } = req.params
+        const hotel = await Hotel.findOne({ _id: hid, status: true })
+        .populate("host", "name email")
+
+        if(!hotel) {
+            return res.status(404).json({
+                msg: "Hotel no encontrado"
+            })
+        }
+
+        return res.status(200).json({
+            success: true,
+            hotel
+        })
+
+    } catch (error) {
+        return res.status(500).json({
+            msg: "Error al obtener el hotel",
+            error: error.message
+        })
+    }
+}
+
+export const updateHotel = async (req, res) => {
+    try {
+        const { hid } = req.params;
+        const data = req.body;
+        const usuario = req.usuario;
+
+        if (data.host) delete data.host;
+
+        const hotel = await Hotel.findById(hid);
+        if (!hotel) {
+            return res.status(404).json({
+                success: false,
+                msg: "Hotel no encontrado"
+            });
+        }
+
+        if (
+            usuario.role !== "ADMIN_ROLE" &&
+            hotel.host.toString() !== usuario._id.toString()
+        ) {
+            return res.status(403).json({
+                success: false,
+                msg: "No tienes permisos para editar este hotel"
+            });
+        }
+
+        const updatedHotel = await Hotel.findByIdAndUpdate(hid, data, { new: true });
+
+        return res.status(200).json({
+            success: true,
+            msg: "Hotel actualizado correctamente",
+            hotel: updatedHotel
+        });
+
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            msg: "Error al actualizar el hotel",
+            error: error.message
+        });
+    }
+};
+
+export const deleteHotel = async (req, res) => {
+    try {
+        const { hid } = req.params;
+        const usuario = req.usuario;
+
+        const hotel = await Hotel.findById(hid);
+        if (!hotel) {
+            return res.status(404).json({
+                msg: "Hotel no encontrado"
+            });
+        }
+
+
+        if (
+            usuario.role !== "ADMIN_ROLE" &&
+            hotel.host.toString() !== usuario._id.toString()
+        ) {
+            return res.status(403).json({
+                success: false,
+                msg: "No tienes permisos para eliminar este hotel"
+            });
+        }
+
+        const deletedHotel = await Hotel.findByIdAndUpdate(hid, { status: false }, { new: true });
+
+        return res.status(200).json({
+            success: true,
+            msg: "Hotel eliminado correctamente",
+            deletedHotel
+        });
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            msg: "Error al eliminar el hotel",
+            error: error.message
+        });
+    }
+};
+

@@ -1,0 +1,136 @@
+[{
+  "_id": {
+    "$oid": "682b6f4bff0f31eeb3b7ce6f"
+  },
+  "name": "Habitacion 1",
+  "description": "Cuenta con lo necesario",
+  "capacity": "1",
+  "pricePerDay": 250,
+  "status": true,
+  "type": "SINGLE",
+  "hotel": {
+    "$oid": "682b5b954b9f597cff3055b0"
+  },
+  "reservations": [
+    {
+      "$oid": "682b635bacf38e42aaaa1957"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b6f75ff0f31eeb3b7ce72"
+  },
+  "name": "Habitacion 2",
+  "description": "Cuenta con lo necesario",
+  "capacity": "2",
+  "pricePerDay": 500,
+  "status": true,
+  "type": "SINGLE",
+  "hotel": {
+    "$oid": "682b5b954b9f597cff3055b0"
+  },
+  "reservations": [
+    {
+      "$oid": "682b635bacf38e42aaaa1957"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b6f8fff0f31eeb3b7ce75"
+  },
+  "name": "Habitacion 3",
+  "description": "Cuenta con lo necesario",
+  "capacity": "3",
+  "pricePerDay": 1000,
+  "status": true,
+  "type": "DOUBLE",
+  "hotel": {
+    "$oid": "682b5b954b9f597cff3055b0"
+  },
+  "reservations": [
+    {
+      "$oid": "682b635bacf38e42aaaa1957"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b6fabff0f31eeb3b7ce78"
+  },
+  "name": "Habitacion 4",
+  "description": "Cuenta con lo necesario",
+  "capacity": "4",
+  "pricePerDay": 2250,
+  "status": true,
+  "type": "SUITE",
+  "hotel": {
+    "$oid": "682b5b954b9f597cff3055b0"
+  },
+  "reservations": [
+    {
+      "$oid": "682b635bacf38e42aaaa1957"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b6fc9ff0f31eeb3b7ce7b"
+  },
+  "name": "Habitacion 5",
+  "description": "Cuenta con lo necesario",
+  "capacity": "8",
+  "pricePerDay": 3500,
+  "status": true,
+  "type": "DELUXE",
+  "hotel": {
+    "$oid": "682b5b954b9f597cff3055b0"
+  },
+  "reservations": [
+    {
+      "$oid": "682b635bacf38e42aaaa1957"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "682b6fd7ff0f31eeb3b7ce7e"
+  },
+  "name": "Habitacion 6",
+  "description": "Cuenta con lo necesario y un poco mas que vale la pena pagar",
+  "capacity": "7",
+  "pricePerDay": 5000,
+  "status": true,
+  "type": "DELUXE",
+  "hotel": {
+    "$oid": "682b5b954b9f597cff3055b0"
+  },
+  "reservations": [
+    {
+      "$oid": "682b635bacf38e42aaaa1957"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68375c0d7e578072906b40b5"
+  },
+  "name": "Habitacion 7",
+  "description": "cuenta con lo necesarioo",
+  "capacity": "10",
+  "pricePerDay": 6000,
+  "status": true,
+  "type": "DELUXE",
+  "hotel": {
+    "$oid": "682b5c664b9f597cff3055d1"
+  },
+  "reservations": [],
+  "__v": 0
+}]
