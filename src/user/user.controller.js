@@ -28,14 +28,11 @@ export const getUserById = async (req, res) => {
 
 export const getUsers = async (req, res) => {
     try {
-        const { limite = 5, desde = 0 } = req.query;
         const query = { status: true };
 
         const [total, users] = await Promise.all([
             User.countDocuments(query),
             User.find(query)
-                .skip(Number(desde))
-                .limit(Number(limite))
         ]);
 
         return res.status(200).json({

@@ -14,7 +14,7 @@ const userSchema = Schema({
     password: {
         type: String,
         required: [true, "Password is required"]
-    },
+    },    
     role: {
         type: String,
         required: true,
@@ -26,10 +26,10 @@ const userSchema = Schema({
             type: Schema.Types.ObjectId,
             ref: 'Reservation'
         }
-    ],
+    ],   
     events:{
         type:String,
-        required:true,
+        required: true,
         default:"Sin eventos asignados",
         enum:["FIFTEEN_YEARS", "WEDDINGS", "BIRTHDAYS", "MEETINGS", "BACHELOR_PARTIES"]
     },
