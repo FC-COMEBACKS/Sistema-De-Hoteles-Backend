@@ -56,10 +56,10 @@
   },
   "name": "Daniel",
   "email": "dani@gmail.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$O+gUmcEjH85uh0QQlGmiMA$whkFHcQin9ZfrEvoletoS3kYYcqXCn39x5YjC2UVCug",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$n4ei+voM6e5CSesHBTCOtg$CIXPuPJFiu79ibsRzlTV2dzIaptzXZyVacGzaoCZKBU",
   "role": "CLIENT_ROLE",
   "reservation": [],
-  "events": "FIFTEEN_YEARS",
+  "events": "BIRTHDAYS",
   "status": true,
   "__v": 0
 },
@@ -73,6 +73,84 @@
   "role": "CLIENT_ROLE",
   "reservation": [],
   "events": "FIFTEEN_YEARS",
+  "status": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68357ab9d9cc7977029f1cad"
+  },
+  "name": "Carlos",
+  "email": "carlos@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$cq0vzX49yFELtz/PkErw4A$nHe5g6kPYcCiwXa7HuQRJ2KbmtgNbtY6/0Jq0fi48aI",
+  "role": "CLIENT_ROLE",
+  "reservation": [],
+  "events": "BIRTHDAYS",
+  "status": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68357d373705049ec1a62c2f"
+  },
+  "name": "Jeferson",
+  "email": "jefersonnn@email.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$Ab7c+lpPjPAnJTWYfKsQ2w$C89R9Q/sYdzwXjiQBqwsXWIQ0W6J5/R5Mw/Dv/y/TuU",
+  "role": "CLIENT_ROLE",
+  "reservation": [],
+  "events": "WEDDINGS",
   "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68357f933705049ec1a62c92"
+  },
+  "name": "Jefersonn",
+  "email": "jefersonn1@email.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$iRBa2x/gCU1L3Llk1tBkCw$65EvJdUqtajEYc/cCJegJDrNZe8lEdfJB4qriezcTH0",
+  "role": "CLIENT_ROLE",
+  "reservation": [],
+  "events": "FIFTEEN_YEARS",
+  "status": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6836d9ec7566380f4f7c5752"
+  },
+  "name": "JPP",
+  "email": "jp@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$oHBDtJ7WlyJd40+FaP2nHQ$COgQMb5aE02Uf5D8CLMEE3e40BMreO+T0NO612wX+OA",
+  "role": "CLIENT_ROLE",
+  "reservation": [],
+  "events": "FIFTEEN_YEARS",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6836da197566380f4f7c5755"
+  },
+  "name": "JP",
+  "email": "jpp@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$X2mb19vo+6ylIQKdqIrN2Q$V464GA53yd+mbecfdmagVjAQd8ycywpkmognMaqOcuA",
+  "role": "CLIENT_ROLE",
+  "reservation": [],
+  "events": "FIFTEEN_YEARS",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68375a0d7e578072906b401d"
+  },
+  "name": "Juan Carlos",
+  "email": "jcc@email.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$ss/pvkYBpyAysY1xXId0iw$sPaY6E0SppU9oQD4Y7hXwhDBsQMv0l5rjXPcxZU0B0I",
+  "role": "CLIENT_ROLE",
+  "reservation": [],
+  "events": "BACHELOR_PARTIES",
+  "status": false,
   "__v": 0
 }]

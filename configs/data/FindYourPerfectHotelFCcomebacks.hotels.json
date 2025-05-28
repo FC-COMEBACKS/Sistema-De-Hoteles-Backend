@@ -177,4 +177,64 @@
   "updatedAt": {
     "$date": "2025-05-19T16:37:01.495Z"
   }
+},
+{
+  "_id": {
+    "$oid": "68375af17e578072906b4044"
+  },
+  "name": "Hotel Bowser",
+  "description": "el hotel de la tortuga de mario bros",
+  "address": "Zona 5 ciudad Guatemala",
+  "telephone": "20511230",
+  "services": [
+    {
+      "type": "Suite",
+      "price": 5000,
+      "_id": {
+        "$oid": "68375af17e578072906b4045"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "682b45ab616986de26f0d417"
+  },
+  "averageRating": 0,
+  "status": true,
+  "ratings": [],
+  "createdAt": {
+    "$date": "2025-05-28T18:50:25.415Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-28T18:50:40.470Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68375b857e578072906b4063"
+  },
+  "name": "Hotel Hammer Bro",
+  "description": "Lanzo martillosssss",
+  "address": "zona 7 Ciudad Guatemala",
+  "telephone": "10234561",
+  "services": [
+    {
+      "type": "Deluxeroom",
+      "price": 6500,
+      "_id": {
+        "$oid": "68375b857e578072906b4064"
+      }
+    }
+  ],
+  "host": {
+    "$oid": "682b45ab616986de26f0d417"
+  },
+  "averageRating": 0,
+  "status": false,
+  "ratings": [],
+  "createdAt": {
+    "$date": "2025-05-28T18:52:53.933Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-28T18:53:05.702Z"
+  }
 }]

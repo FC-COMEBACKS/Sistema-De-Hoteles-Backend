@@ -159,4 +159,48 @@
   },
   "status": false,
   "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68375c857e578072906b40d9"
+  },
+  "startDate": {
+    "$date": "2025-05-29T00:00:00.000Z"
+  },
+  "exitDate": {
+    "$date": "2025-06-02T00:00:00.000Z"
+  },
+  "user": {
+    "$oid": "682b541c1b0ecb1ad9c2ac3c"
+  },
+  "hotel": {
+    "$oid": "682b5c664b9f597cff3055d1"
+  },
+  "room": {
+    "$oid": "68375c0d7e578072906b40b5"
+  },
+  "status": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68375cfdceaab8cb20a77c88"
+  },
+  "startDate": {
+    "$date": "2025-05-28T00:00:00.000Z"
+  },
+  "exitDate": {
+    "$date": "2025-06-03T00:00:00.000Z"
+  },
+  "user": {
+    "$oid": "682b541c1b0ecb1ad9c2ac3c"
+  },
+  "hotel": {
+    "$oid": "68375af17e578072906b4044"
+  },
+  "room": {
+    "$oid": "68375c0d7e578072906b40b5"
+  },
+  "status": true,
+  "__v": 0
 }]

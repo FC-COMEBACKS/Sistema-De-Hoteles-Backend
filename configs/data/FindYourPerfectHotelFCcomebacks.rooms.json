@@ -117,4 +117,20 @@
     }
   ],
   "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68375c0d7e578072906b40b5"
+  },
+  "name": "Habitacion 7",
+  "description": "cuenta con lo necesarioo",
+  "capacity": "10",
+  "pricePerDay": 6000,
+  "status": true,
+  "type": "DELUXE",
+  "hotel": {
+    "$oid": "682b5c664b9f597cff3055d1"
+  },
+  "reservations": [],
+  "__v": 0
 }]
