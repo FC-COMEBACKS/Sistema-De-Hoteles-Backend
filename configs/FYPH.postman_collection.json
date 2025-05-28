@@ -1169,6 +1169,75 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Factura",
+			"item": [
+				{
+					"name": "Agregar factura",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"paymentMethod\": \"CREDIT_CARD\",\r\n  \"dueDate\": \"2025-06-01T00:00:00.000Z\",\r\n  \"additionalCharges\": [\r\n    {\r\n      \"serviceType\": \"Singleroom\",\r\n      \"description\": \"Upgrade a singleroom\",\r\n      \"quantity\": 1\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/invoices/create/6830b46b30cde22324355069",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"invoices",
+								"create",
+								"6830b46b30cde22324355069"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pagar factura",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"paymentStatus\": \"PAID\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/FYPH/v1/invoices/pay/6836b9a2da58e4662c1df171",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"FYPH",
+								"v1",
+								"invoices",
+								"pay",
+								"6836b9a2da58e4662c1df171"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
