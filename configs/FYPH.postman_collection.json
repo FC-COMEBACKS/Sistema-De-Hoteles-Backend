@@ -261,7 +261,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"andres@gmail.com\",\r\n    \"password\":\"An12345@\"\r\n}",
+							"raw": "{\r\n    \"email\":\"dani@gmail.com\",\r\n    \"password\":\"Ad12345@\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1176,11 +1176,21 @@
 				{
 					"name": "Agregar factura",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDg0MTk1NzYsImV4cCI6MTc0ODQyMzE3Nn0._GM2W5PgjtGkpW7HFZTLigFXQJj4Sfe_SAKIFlRIkbQ",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"paymentMethod\": \"CREDIT_CARD\",\r\n  \"dueDate\": \"2025-06-01T00:00:00.000Z\",\r\n  \"additionalCharges\": [\r\n    {\r\n      \"serviceType\": \"Singleroom\",\r\n      \"description\": \"Upgrade a singleroom\",\r\n      \"quantity\": 1\r\n    }\r\n  ]\r\n}",
+							"raw": "{\r\n  \"paymentMethod\": \"CREDIT_CARD\",\r\n  \"dueDate\": \"2025-06-01T00:00:00.000Z\",\r\n  \"additionalCharges\": [\r\n    {\r\n      \"serviceType\": \"Singleroom\",\r\n      \"description\": \"Upgrade a singleroom\",\r\n      \"quantity\": 3\r\n    }\r\n  ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1208,6 +1218,16 @@
 				{
 					"name": "Pagar factura",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDg0MTk1NzYsImV4cCI6MTc0ODQyMzE3Nn0._GM2W5PgjtGkpW7HFZTLigFXQJj4Sfe_SAKIFlRIkbQ",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
@@ -1220,7 +1240,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/FYPH/v1/invoices/pay/6836b9a2da58e4662c1df171",
+							"raw": "http://localhost:3000/FYPH/v1/invoices/pay/6836c455a0e21a1a7477bcda",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1231,7 +1251,7 @@
 								"v1",
 								"invoices",
 								"pay",
-								"6836b9a2da58e4662c1df171"
+								"6836c455a0e21a1a7477bcda"
 							]
 						}
 					},
