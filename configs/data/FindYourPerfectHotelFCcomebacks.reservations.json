@@ -11,7 +11,7 @@
   "user": {
     "$oid": "682b60b54b9f597cff3055f7"
   },
-  "status": true,
+  "status": false,
   "__v": 0
 },
 {
@@ -27,7 +27,7 @@
   "user": {
     "$oid": "682b60b54b9f597cff3055f7"
   },
-  "status": true,
+  "status": false,
   "__v": 0
 },
 {
@@ -43,7 +43,7 @@
   "user": {
     "$oid": "682b60b54b9f597cff3055f7"
   },
-  "status": true,
+  "status": false,
   "__v": 0
 },
 {
@@ -59,7 +59,7 @@
   "user": {
     "$oid": "682b60b54b9f597cff3055f7"
   },
-  "status": true,
+  "status": false,
   "__v": 0
 },
 {
@@ -75,7 +75,7 @@
   "user": {
     "$oid": "682b60b54b9f597cff3055f7"
   },
-  "status": true,
+  "status": false,
   "__v": 0
 },
 {
@@ -90,6 +90,72 @@
   },
   "user": {
     "$oid": "682b60b54b9f597cff3055f7"
+  },
+  "status": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "683014671014ef05211f622f"
+  },
+  "startDate": {
+    "$date": "2025-07-25T00:00:00.000Z"
+  },
+  "exitDate": {
+    "$date": "2025-07-30T00:00:00.000Z"
+  },
+  "user": {
+    "$oid": "682b60b54b9f597cff3055f7"
+  },
+  "hotel": {
+    "$oid": "682b5b954b9f597cff3055b0"
+  },
+  "room": {
+    "$oid": "682b6fc9ff0f31eeb3b7ce7b"
+  },
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6830b46b30cde22324355069"
+  },
+  "startDate": {
+    "$date": "2025-05-29T00:00:00.000Z"
+  },
+  "exitDate": {
+    "$date": "2025-05-29T00:00:00.000Z"
+  },
+  "user": {
+    "$oid": "682b60b54b9f597cff3055f7"
+  },
+  "hotel": {
+    "$oid": "682b5c444b9f597cff3055bc"
+  },
+  "room": {
+    "$oid": "682b6f4bff0f31eeb3b7ce6f"
+  },
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6830b6382251244dcc693acd"
+  },
+  "startDate": {
+    "$date": "2025-05-29T00:00:00.000Z"
+  },
+  "exitDate": {
+    "$date": "2025-05-30T00:00:00.000Z"
+  },
+  "user": {
+    "$oid": "682b60b54b9f597cff3055f7"
+  },
+  "hotel": {
+    "$oid": "682b5c444b9f597cff3055bc"
+  },
+  "room": {
+    "$oid": "682b6f75ff0f31eeb3b7ce72"
   },
   "status": false,
   "__v": 0
