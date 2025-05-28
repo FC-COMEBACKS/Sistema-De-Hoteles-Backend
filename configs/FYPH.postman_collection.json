@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "0e1d9cc9-b853-478c-bb5c-a550606410d4",
+		"_postman_id": "e7b2e089-61ff-4ce2-9b47-1fe2bf1d889f",
 		"name": "FYPH",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "37636976"
+		"_exporter_id": "42000110"
 	},
 	"item": [
 		{
@@ -293,7 +293,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc2NjY5NTMsImV4cCI6MTc0NzY3MDU1M30.rHBMW6c5ep2rsUrm1fFn8bXxpg0MVfNTPNP6WOsfcyc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNTQxYzFiMGVjYjFhZDljMmFjM2MiLCJpYXQiOjE3NDg0MDA2MjIsImV4cCI6MTc0ODQwNDIyMn0.pBWwNf1hQ8BQHVc45ZBB_bCT84-2UWMQPOMA8BcgEag",
 									"type": "string"
 								}
 							]
@@ -302,7 +302,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"newPassword\":\"mA12345@\"\r\n}",
+							"raw": "{\r\n    \"newPassword\":\"Da12345@\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -567,7 +567,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc3ODA2MDAsImV4cCI6MTc0Nzc4NDIwMH0.eHJMqDIQn-7JagE7RPy0MISfwS6R2ZptUzs7d0Mj1P8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc2NzA1MzQsImV4cCI6MTc0NzY3NDEzNH0.9Kprzli9jW6dDp6gdVVsJxgwxYeQIqW5z8ip_VNnlGY",
 									"type": "string"
 								}
 							]
@@ -576,7 +576,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Hotel Mario\",\r\n  \"description\": \"A cozy hotel near the park.\",\r\n  \"address\": \"12 Beach Avenue\",\r\n  \"telephone\": \"12340912\",\r\n  \"services\": [\r\n    {\r\n      \"type\": \"Singleroom\",\r\n      \"price\": 100.50\r\n    }\r\n  ]\r\n}",
+							"raw": "{\r\n  \"name\": \"Hotel Mario\",\r\n  \"description\": \"A cozy hotel near the park.\",\r\n  \"address\": \"12 Beach Avenue\",\r\n  \"telephone\": \"12340912\",\r\n  \"services\": [\r\n    {\r\n      \"type\": \"Singleroom\",\r\n      \"price\": 100.50\r\n    }\r\n  ],\r\n  \"host\": \"682b4a4e85717a27cfa51b21\"  \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -611,7 +611,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc3NTE3MDgsImV4cCI6MTc0Nzc1NTMwOH0.CH4zSrNEjn_4xv23kAdOi-zAKwMKx0M6aJyTKbG4A44",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc2NzA1MzQsImV4cCI6MTc0NzY3NDEzNH0.9Kprzli9jW6dDp6gdVVsJxgwxYeQIqW5z8ip_VNnlGY",
 									"type": "string"
 								}
 							]
@@ -620,12 +620,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"raw": "{\r\n  \"name\": \"Hotel Sunshine\",\r\n  \"description\": \"A cozy hotel near the beach.\",\r\n  \"address\": \"123 Beach Avenue\",\r\n  \"telephone\": \"12345678\",\r\n  \"services\": [\r\n    {\r\n      \"type\": \"Singleroom\",\r\n      \"price\": 85.50\r\n    }\r\n  ],\r\n  \"host\": \"682b4a4e85717a27cfa51b21\"  \r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/FYPH/v1/hotels/",
@@ -692,7 +687,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc3ODA2MDAsImV4cCI6MTc0Nzc4NDIwMH0.eHJMqDIQn-7JagE7RPy0MISfwS6R2ZptUzs7d0Mj1P8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc2NzA1MzQsImV4cCI6MTc0NzY3NDEzNH0.9Kprzli9jW6dDp6gdVVsJxgwxYeQIqW5z8ip_VNnlGY",
 									"type": "string"
 								}
 							]
@@ -701,7 +696,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Hotel Mario Actualizado\",\r\n  \"description\": \"Descripción nueva del hotel.\",\r\n  \"address\": \"Nueva dirección 123\",\r\n  \"telephone\": \"87654321\",\r\n  \"services\": [\r\n    {\r\n      \"type\": \"Doubleroom\",\r\n      \"price\": 150.00\r\n    }\r\n  ]\r\n}",
+							"raw": "{\r\n  \"name\": \"Hotel Peach\",\r\n  \"description\": \"A cozy hotel near the park.\",\r\n  \"address\": \"12 Beach Avenue\",\r\n  \"telephone\": \"12340912\",\r\n  \"services\": [\r\n    {\r\n      \"type\": \"Singleroom\",\r\n      \"price\": 100.50\r\n    }\r\n  ],\r\n  \"host\": \"682b4a4e85717a27cfa51b21\"  \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -709,7 +704,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/FYPH/v1/hotels/updateHotel/682cc5eadb6ba47ed2acb39e",
+							"raw": "http://localhost:3000/FYPH/v1/hotels/updateHotel/682b5c444b9f597cff3055bc",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -720,7 +715,7 @@
 								"v1",
 								"hotels",
 								"updateHotel",
-								"682cc5eadb6ba47ed2acb39e"
+								"682b5c444b9f597cff3055bc"
 							]
 						}
 					},
@@ -734,7 +729,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc3ODU5NDIsImV4cCI6MTc0Nzc4OTU0Mn0.c0hEf3MEEqtC9JLDoAmWEQeHgKNM7qBRRRvqZYzVyps",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc2NzA1MzQsImV4cCI6MTc0NzY3NDEzNH0.9Kprzli9jW6dDp6gdVVsJxgwxYeQIqW5z8ip_VNnlGY",
 									"type": "string"
 								}
 							]
@@ -746,7 +741,7 @@
 							"raw": "{\r\n  \"name\": \"Hotel Mario\",\r\n  \"description\": \"A cozy hotel near the park.\",\r\n  \"address\": \"12 Beach Avenue\",\r\n  \"telephone\": \"12340912\",\r\n  \"services\": [\r\n    {\r\n      \"type\": \"Singleroom\",\r\n      \"price\": 100.50\r\n    }\r\n  ],\r\n  \"host\": \"682b4a4e85717a27cfa51b21\"  \r\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/FYPH/v1/hotels/deleteHotel/682d123cc1dcd20dae50c2bf",
+							"raw": "http://localhost:3000/FYPH/v1/hotels/deleteHotel/682b5df04b9f597cff3055e6",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -757,7 +752,7 @@
 								"v1",
 								"hotels",
 								"deleteHotel",
-								"682d123cc1dcd20dae50c2bf"
+								"682b5df04b9f597cff3055e6"
 							]
 						}
 					},
@@ -820,7 +815,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNjBiNTRiOWY1OTdjZmYzMDU1ZjciLCJpYXQiOjE3NDgwMjI3OTcsImV4cCI6MTc0ODAyNjM5N30.WYdT6O0UB4B5ClBbMXjeTvOPrbM3kYnIToGknP20ReA",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNjBiNTRiOWY1OTdjZmYzMDU1ZjciLCJpYXQiOjE3NDc2NzM4MTYsImV4cCI6MTc0NzY3NzQxNn0.6C0cfI3h2Iox0guwC-9Somlr9iZeMtLWnMLhvCtRins",
 									"type": "string"
 								}
 							]
@@ -829,12 +824,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"startDate\": \"2025-07-25\",\r\n  \"exitDate\": \"2025-07-30\",\r\n  \"user\":\"682b60b54b9f597cff3055f7\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"raw": "{\r\n  \"startDate\": \"2025-07-25\",\r\n  \"exitDate\": \"2025-07-30\",\r\n  \"user\":\"682b60b54b9f597cff3055f7\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/FYPH/v1/reservations/",
@@ -1068,7 +1058,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc5NjExMDYsImV4cCI6MTc0Nzk2NDcwNn0.WCexfEvaFwJS0pyi18VxZpHt75EEwQacgArPszGVH9I",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODJiNDVhYjYxNjk4NmRlMjZmMGQ0MTciLCJpYXQiOjE3NDc2NzU2ODUsImV4cCI6MTc0NzY3OTI4NX0.mgaMhtc0E2QP_CfxM5CiKIhnafjXTA1YF6x1dssGKic",
 									"type": "string"
 								}
 							]
@@ -1077,12 +1067,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"name\":\"Habitacion 6\",\r\n   \"description\":\"Cuenta con lo necesario\",\r\n   \"capacity\":\"7\",\r\n   \"pricePerDay\":3000.00,\r\n   \"type\":\"DELUXE\",\r\n   \"hotel\":\"682b5b954b9f597cff3055b0\",\r\n   \"reservations\":\"682b635bacf38e42aaaa1957\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"raw": "{\r\n   \"name\":\"Habitacion 6\",\r\n   \"description\":\"Cuenta con lo necesario\",\r\n   \"capacity\":\"7\",\r\n   \"pricePerDay\":3000.00,\r\n   \"type\":\"DELUXE\",\r\n   \"hotel\":\"682b5b954b9f597cff3055b0\",\r\n   \"reservations\":\"682b635bacf38e42aaaa1957\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/FYPH/v1/rooms/getRooms",
